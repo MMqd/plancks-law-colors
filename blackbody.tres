@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://waga3l4ialif"]
+
+[ext_resource type="Shader" uid="uid://brs5kw0kwp5kk" path="res://fire.gdshader" id="1_qufbh"]
+[ext_resource type="Texture2D" uid="uid://t1u4xrpben2l" path="res://color_temp_600_60000.exr" id="2_6rltv"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qufbh")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/texture_plancks_emission = ExtResource("2_6rltv")
+shader_parameter/plancks_emission_energy = 10.0
+shader_parameter/plancks_emission_temperature_celcius = -273.15
+shader_parameter/temperature_cooling_rate = 0.3
+shader_parameter/use_color_as_age = false

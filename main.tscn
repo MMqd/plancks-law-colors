@@ -1,0 +1,177 @@
+[gd_scene load_steps=23 format=3 uid="uid://bypa1gccleaiv"]
+
+[ext_resource type="Material" uid="uid://cycmxkjmsa8l6" path="res://fire.material" id="1_x8vqr"]
+[ext_resource type="Material" uid="uid://b1natfkjxenqq" path="res://sparks.material" id="3_qotaj"]
+[ext_resource type="Material" uid="uid://waga3l4ialif" path="res://blackbody.tres" id="3_wpqcq"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_nn75g"]
+ground_color = Color(0.9, 0.978333, 1, 1)
+
+[sub_resource type="Sky" id="Sky_3bnbb"]
+sky_material = SubResource("PhysicalSkyMaterial_nn75g")
+
+[sub_resource type="Environment" id="Environment_ld45m"]
+background_mode = 2
+sky = SubResource("Sky_3bnbb")
+tonemap_mode = 3
+tonemap_white = 16.0
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 0.99
+sdfgi_min_cell_size = 0.05
+sdfgi_cascade0_distance = 3.2
+sdfgi_max_distance = 51.2
+sdfgi_y_scale = 2
+glow_enabled = true
+glow_levels/1 = 16.0
+glow_levels/2 = 8.0
+glow_levels/3 = 4.0
+glow_levels/4 = 2.0
+glow_levels/5 = 0.5
+glow_levels/6 = 0.25
+glow_levels/7 = 0.13
+glow_normalized = true
+glow_intensity = 0.25
+glow_blend_mode = 1
+glow_hdr_threshold = 0.0
+glow_hdr_scale = 4.0
+glow_hdr_luminance_cap = 256.0
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_wagiy"]
+auto_exposure_scale = 0.2
+auto_exposure_speed = 10.0
+auto_exposure_min_exposure_value = -16.0
+auto_exposure_max_exposure_value = 20.0
+
+[sub_resource type="Curve" id="Curve_6eayl"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.921318), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3ivb1"]
+curve = SubResource("Curve_6eayl")
+
+[sub_resource type="Gradient" id="Gradient_ue8k8"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x7gt8"]
+gradient = SubResource("Gradient_ue8k8")
+
+[sub_resource type="Curve" id="Curve_qttel"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8rn2p"]
+curve = SubResource("Curve_qttel")
+
+[sub_resource type="Curve" id="Curve_0lgrv"]
+_data = [Vector2(0, 0), 0.0, 11.8854, 0, 0, Vector2(0.0752212, 1), 0.0653553, 0.0653553, 0, 0, Vector2(1, 0), -2.36526, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_jihdo"]
+curve = SubResource("Curve_0lgrv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_38khp"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 28.0
+linear_accel_max = 36.0
+radial_accel_min = -2.0
+radial_accel_max = -2.0
+radial_accel_curve = SubResource("CurveTexture_8rn2p")
+tangential_accel_min = -0.250002
+tangential_accel_max = 0.249998
+scale_min = 0.25
+scale_max = 0.75
+scale_curve = SubResource("CurveTexture_jihdo")
+color_ramp = SubResource("GradientTexture1D_x7gt8")
+anim_offset_curve = SubResource("CurveTexture_3ivb1")
+turbulence_enabled = true
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.02
+
+[sub_resource type="BoxMesh" id="BoxMesh_y0hba"]
+
+[sub_resource type="Curve" id="Curve_li887"]
+_data = [Vector2(0, 0), 0.0, 11.8854, 0, 0, Vector2(0.0752212, 1), 0.0653553, 0.0653553, 0, 0, Vector2(0.687386, 0.584734), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.36526, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_d3fr2"]
+curve = SubResource("Curve_li887")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sbepq"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 1.25
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 28.0
+linear_accel_max = 36.0
+radial_accel_min = -2.0
+radial_accel_max = -2.0
+radial_accel_curve = SubResource("CurveTexture_8rn2p")
+tangential_accel_min = -0.250002
+tangential_accel_max = 0.249998
+scale_min = 0.75
+scale_max = 1.25
+scale_curve = SubResource("CurveTexture_d3fr2")
+color_ramp = SubResource("GradientTexture1D_x7gt8")
+turbulence_enabled = true
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.02
+
+[sub_resource type="QuadMesh" id="QuadMesh_cucsp"]
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_w5m8x"]
+
+[node name="main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.387347, -0.812134, -0.436348, 0.487215, -0.582128, 0.65096, -0.782677, 0.0395523, 0.62117, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ld45m")
+camera_attributes = SubResource("CameraAttributesPhysical_wagiy")
+
+[node name="Fire" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17852, 0, 0)
+material_override = ExtResource("1_x8vqr")
+amount = 200
+preprocess = 5.0
+visibility_aabb = AABB(-15, -1, -15, 30, 27.643, 30)
+process_material = SubResource("ParticleProcessMaterial_38khp")
+draw_pass_1 = SubResource("BoxMesh_y0hba")
+
+[node name="Sparks" type="GPUParticles3D" parent="Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17852, 0, 0)
+material_override = ExtResource("3_qotaj")
+amount = 50
+preprocess = 5.0
+randomness = 1.0
+visibility_aabb = AABB(-15, -1, -15, 30, 27.643, 30)
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_sbepq")
+draw_pass_1 = SubResource("QuadMesh_cucsp")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.295, 12.25)
+fov = 45.0
+
+[node name="Blackbody" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
+material_override = ExtResource("3_wpqcq")
+mesh = SubResource("SphereMesh_w5m8x")
